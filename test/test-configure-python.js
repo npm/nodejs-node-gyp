@@ -54,7 +54,7 @@ test('configure PYTHONPATH with existing env of one dir', function (t) {
     t.equal(process.env.PYTHONPATH, [EXPECTED_PYPATH, existingPath].join(SEPARATOR))
 
     const dirs = process.env.PYTHONPATH.split(SEPARATOR)
-    t.deepEqual(dirs, [EXPECTED_PYPATH, existingPath])
+    t.same(dirs, [EXPECTED_PYPATH, existingPath])
 
     return SPAWN_RESULT
   }
@@ -76,7 +76,7 @@ test('configure PYTHONPATH with existing env of multiple dirs', function (t) {
     t.equal(process.env.PYTHONPATH, [EXPECTED_PYPATH, existingPath].join(SEPARATOR))
 
     const dirs = process.env.PYTHONPATH.split(SEPARATOR)
-    t.deepEqual(dirs, [EXPECTED_PYPATH, pythonDir1, pythonDir2])
+    t.same(dirs, [EXPECTED_PYPATH, pythonDir1, pythonDir2])
 
     return SPAWN_RESULT
   }
